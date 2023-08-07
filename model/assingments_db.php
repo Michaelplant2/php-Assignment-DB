@@ -1,4 +1,5 @@
 <?php
+
    function get_assignments_by_course($course_id) {
       global $db;
       if ($course_id) {
@@ -16,6 +17,7 @@
       $statement->closeCursor();
       return $assignments;
    }
+
    function delete_assignment($assignment_id) {
       global $db;
       $query = 'DELETE FROM assignments WHERE ID = :assign_id';
@@ -24,6 +26,7 @@
       $statement->execute();
       $statement->closeCursor();
    }
+
    function add_assignment($course_id, $description) {
       global $db;
       $query = 'INSERT INTO assignments (Description, courseID) VALUES (:descr, :courseID)
