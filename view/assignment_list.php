@@ -20,5 +20,29 @@
          <button class="add-button bold">Go</button>
       </form>
    </header>
+   <?php if ($assignments) { ?>
+      <?php foreach ($assignments) as $assignment) : ?>
+      <div class="list__row">
+         <div class="list__item">
+            <p class="bold"><?= $assignment['courseName'] ?></p>
+            <p><?= $assignment['Description'] ?></p>
+         </div>
+         <div class="list__removeItem">
+            <form action="."method="post">
+               <input type="hidden" name="action" 
+               value="delete_assignment">
+               <input type="hidden" name="assignment_id" 
+               value="<?=$assignment['ID'] ?>">
+               <button class="remove-button">X</button>
+            </form>         
+         </div>
+      </div>
+      <?php endforeach; ?>
+      <?php } else { ?>
+      <br>
+      <?php if ($course_id) { ?>
+         <p>No assignments exist for this course yet.</p>
+      <?php } else { ?>
+         
 </section>
 <?php include('view/footer.php'); ?>
