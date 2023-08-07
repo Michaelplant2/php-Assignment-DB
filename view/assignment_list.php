@@ -21,7 +21,7 @@
       </form>
    </header>
    <?php if ($assignments) { ?>
-      <?php foreach ($assignments) as $assignment) : ?>
+      <?php foreach ($assignments as $assignment) : ?>
       <div class="list__row">
          <div class="list__item">
             <p class="bold"><?= $assignment['courseName'] ?></p>
@@ -43,6 +43,31 @@
       <?php if ($course_id) { ?>
          <p>No assignments exist for this course yet.</p>
       <?php } else { ?>
-         
+         <p>No assignments exist yet.</p>
+      <?php } ?>
+      <br>
+      <?php } ?>
+</section>
+
+<section id="add" class="add">
+   <h2>Add Assignments</h2>
+   <form action="." method="post" id="add__form" class="add__form">
+      <input type="hidden" name="action" value="add_assignment">
+      <div class="add__inputs">
+         <label>Course:</label>
+         <select name="course_id"required>
+            <option value="">Please select</option>
+            <?php foreach ($courses as $course) : ?>
+            <option value="<?= $course['courseID']; ?>">
+               <?= $course['courseName']; ?>
+            </option>
+            <?php endforeach; ?>
+         </select>
+         <label>Description:</label>
+         <input type="text" name="description" maxlength="120" 
+         placeholder="Description"required>
+      </div>
+      <div class="add__addItem"></div>
+   </form>
 </section>
 <?php include('view/footer.php'); ?>
