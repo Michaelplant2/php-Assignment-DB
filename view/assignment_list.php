@@ -67,7 +67,11 @@
          <input type="text" name="description" maxlength="120" 
          placeholder="Description"required>
       </div>
-      <div class="add__addItem"></div>
+      <div class="add__addItem">
+         <button class="add-button bold">Add</button>
+      </div>
    </form>
 </section>
+<br>
+<p><a href=".?action=list_courses">View/Edit Courses</a></p>
 <?php include('view/footer.php'); ?>
