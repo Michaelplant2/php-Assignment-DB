@@ -34,6 +34,11 @@
          <input type="text" name="course_name" maxlength="50" 
          placeholder="Name" autofocus required>
       </div>
+      <div class="add__addItem">
+         <button class="add-button bold">Add</button>
+      </div>
    </form>
 </section>
+<br>
+<p><a href=".">View &amp; Add Assignments</a></p>
 <?php include('view/footer.php'); ?>
