@@ -10,7 +10,7 @@
       return $courses;
    }
 
-   function get_courses_name($course_id) {
+   function get_course_name($course_id) {
       if (!$course_id) {
          return "All Courses";
       }
