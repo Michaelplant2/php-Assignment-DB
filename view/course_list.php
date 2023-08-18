@@ -15,7 +15,7 @@
             <form action="." method="post">
                <input type="hidden" name="action" value="delete_course">
                <input type="hidden" name="course_id" value="<?= $course['courseID'] ?>">
-               <button class="remove-button"></button>
+               <button class="remove-button">X</button>
             </form>
          </div>
       </div>
