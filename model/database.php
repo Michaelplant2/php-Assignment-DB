@@ -5,7 +5,6 @@
 
    try {
       $db = new PDO($dsn, $username);
-      $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
    } catch (PDOException $e) {
       $error = "Database Error: ";
       $error .= $e->getMessage();
